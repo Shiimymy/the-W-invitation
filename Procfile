@@ -1,1 +1,1 @@
-web: gunicorn codestar.wsgi
+web: gunicorn the_w_invitation.wsgi
