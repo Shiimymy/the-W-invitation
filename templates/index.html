@@ -1,24 +1,36 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %}
 
-<header id="hero">
-  <h1 class="my-auto">PETER & AMELIA</h1>
-  <p>Would like to invite you!</p>
+ {% block content %}
+
+<header>
+    <div class="animate__animated animate__slideInDown" id="tittle">
+        <h1>PETER & AMELIA</h1>
+        <p>Would like to invite you!</p>
+    </div>
 </header>
 
-<main>
+
   <article>
-    <h2>Please join us on our wedding</h2>
-    <p>day on</p>
+    <h2>Please join us on our wedding
+        <br>
+        day on
+    </h2>
+    <hr>
     <p>the 5th April 2024 <span class="guest-info">at 10am</span></p>
     <p>in</p>
     <p><span class="guest-info">St. Patrick's Cathedral, </span>Dundalk</p>
+    <i class="fa-brands fa-pagelines"></i>
   </article>
-  <article class="guest-info">
-    <h2>Followed by a Lunch</h2>
-    <p>in</p>
+
+  <article class="guest-info" id="venue">
+    <h2>Followed by a Lunch
+        <br>
+        in
+    </h2>
+    <hr>
     <p>Ballymascanlon Hotel in Dundalk</p>
     <p>at 12pm</p>
+    <i class="fa-brands fa-pagelines"></i>
   </article>
-</main>
 
-{%endblock%}
+{% endblock %}

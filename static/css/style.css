@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Roboto:wght@300&display=swap');
+
+/*--------------------------------------------  General */
+
+:root {
+    --primary-color: #39261A;
+    --contrast-color: #fafafa;
+    --brand-color: #C2473D; 
+}
+
+*, .row{
+    font-family: 'Roboto',
+        sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+ body {
+    background: var(--contrast-color);
+ }
+
+nav {
+    border-bottom: var(--primary-color) 1px solid;
+}
+
+h1, h2 {
+    font-family: 'Oswald', sans-serif;
+}
+
+h2, .navbar-light .navbar-brand, .navbar-light .navbar-nav .nav-link.active {
+    color: var(--brand-color);
+}
+
+a:hover {
+    color: var(--primary-color);
+
+}
+
+/*------------------------------ Block Content */
+
+.main {
+    position: relative;
+    background-image: url("/static/flower-frame.png");
+    background-size: cover;
+}
+
+/*------------------------------ Footer */
+
+footer, footer a {
+    color: var(--brand-color);
+    text-decoration: none;
+}
+
+footer {
+    border-top: #39261A 1px solid;
+}
+
+.socials {
+    text-align: right;
+}
+
+footer .fa-brands {
+    font-size: 25px;
+    padding: 5px;
+}
+
+
+/*-------------------------------------------- Home Page*/
+
+/*------------------------------ Hero */
+
+.tittle {
+    position: absolute;
+}
+
+header {
+    height: 90vh;
+    position: relative;
+}
+
+header::before {
+    content: "";
+    background-image: url("/static/rings.jpg");
+    position: absolute;
+    background-size: cover;
+    opacity: 50%;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+}
+
+.container-fluid {
+    padding: 0px;
+}
+
+.animate__animated {
+    color: var(--primary-color);
+}
+
+h1 {
+    padding-top: 2em;
+    font-size: 6em;
+}
+
+header p {
+    font-size: 2em;
+}
+
+/*------------------------------ Article */
+
+article {
+    margin: auto;
+    margin-top: 2.5em; 
+    color: #39261A;
+    background-color: #fafafab3; 
+    width: 80%; 
+    border-radius: 10px;
+}
+
+h2 {
+    font-size: 2.5em;
+}
+
+article p {
+    margin: 0;
+}
+
+article hr {
+    padding: 2px;
+    background-color: var(--primary-color);
+    width: 40%;
+    margin: auto;
+}
+
+article i {
+    padding: 7px;
+    font-size: 30px;
+}
+
+#venue {
+    margin-bottom: 2em;
+}
+
+
