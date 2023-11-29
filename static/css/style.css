@@ -26,13 +26,17 @@ h1, h2 {
     font-family: 'Oswald', sans-serif;
 }
 
-h2, .navbar-light .navbar-brand, .navbar-light .navbar-nav .nav-link.active {
+h2, .navbar-light .navbar-brand, .navbar-light .navbar-nav .nav-link {
     color: var(--brand-color);
+}
+
+.navbar-light .navbar-brand, .navbar-light .navbar-nav .nav-link {
+    letter-spacing: 1px;
 }
 
 a:hover {
     color: var(--primary-color);
-
+    text-decoration: underline;
 }
 
 /*------------------------------ Block Content */
@@ -52,6 +56,11 @@ footer, footer a {
 
 footer {
     border-top: #39261A 1px solid;
+}
+
+#email {
+    text-align: left;
+    padding-top: 2px;
 }
 
 .socials {
@@ -142,3 +151,38 @@ article i {
 }
 
 
+/*-------------------------------------------- authentication Pages*/
+
+.authentication {
+    height: 82vh;
+    color: var(--primary-color);
+}
+
+.authentication a {
+    color: var(--primary-color);
+}
+
+.authentication a:hover {
+    color: var(--brand-color);
+}
+
+.authentication button {
+   border: 1px solid var(--primary-color); 
+   font-weight: 700;
+   color: var(--contrast-color);
+   background-color: var(--brand-color);
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.authentication button:hover {
+    border: 1px solid var(--brand-color);
+    color: var(--brand-color);
+    background-color: var(--contrast-color);
+    transition: 1s;
+}
+
+.authentication li {
+    font-size: 0.7rem;
+    list-style: none;
+}

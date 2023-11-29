@@ -49,15 +49,26 @@
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
               <a
-                class="nav-link active"
+                class="nav-link"
                 aria-current="page"
-                href="{% url 'home' %}"
-                >Home</a
-              >
+                href="{% url 'home' %}">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Login</a>
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link" href="#">Memories</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+            </li>
+            {% else %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+            </li>
+            {% endif %}
           </ul>
         </div>
       </div>
@@ -72,10 +83,10 @@
     <!-- Footer -->
     <footer class="footer mt-auto py-2 bg-white">
         <div class="row">
-            <div class="col-10 ps-4" id="email">
+            <div class="col-6 ps-4" id="email">
                 <a href="mailto:contact@email.com">contact@email.com</a>
             </div>
-            <div class="socials my-auto col-2">
+            <div class="socials my-auto col-6">
                 <a href="#"><i class="fa-brands fa-instagram"></i></a>
                 <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
             </div>
