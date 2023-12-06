@@ -3,8 +3,8 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
 
-class Memory(models.Model):
-    image = models.ImageField(upload_to='media/image', default='')
+class Memories(models.Model):
+    image = models.ImageField(upload_to='media/image', default='', blank=True)
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="blog_posts"
     )
