@@ -4,9 +4,9 @@ from cloudinary.models import CloudinaryField
 
 
 class Memories(models.Model):
-    image = models.ImageField(upload_to='media/image', default='', blank=True)
+    image = models.ImageField(upload_to='media/image', default='placeholder')
     author = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="blog_posts"
+        User, on_delete=models.CASCADE, related_name="memories_posts"
     )
     created_on = models.DateTimeField(auto_now_add=True)
     content = models.TextField()
@@ -17,4 +17,3 @@ class Memories(models.Model):
 
     def __str__(self):
         return f"{self.author} memory:{self.content}"
-    
