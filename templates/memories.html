@@ -2,9 +2,41 @@
 
 {% block content %}
 
-<div>
+<div class="page-tittle">
     <h1>Memories</h1>
-    <p>Share your memories with us!</p>
+    <p>Share and view pictures
+        <br>
+        or stories about our wedding.
+        <br>
+        <i class="fa-brands fa-pagelines"></i>
+    </p>
 </div>
+
+<article>
+        <!--List of approved memories-->
+        <div id="memories_list" class="row">
+
+                {% for memories in memories_list %}
+                <div class="card col-5 col-md-4 m-2 p-1">
+                    <div class="image-container">
+                        {% if "placeholder" in memories.image.url %}
+                        <img class="card-img-top" alt="rose default image" src="../static/rose.jpeg">
+                        {% else %}
+                        <img class="card-img-top" src=" {{ memories.image.url }}">
+                        {% endif %}
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            <strong>Author: {{ memories.author }}</strong>
+                            <br>
+                            Message: {{ memories.content }}
+                        </p>
+                    </div>
+                </div>
+                    {% endfor %}
+                </div>
+        </div>
+</article>
+
 
 {% endblock %}

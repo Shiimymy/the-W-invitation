@@ -109,6 +109,7 @@ header::before {
 h1 {
     padding-top: 2em;
     font-size: 6em;
+    color: var(--primary-color);
 }
 
 header p {
@@ -151,7 +152,7 @@ article i {
 }
 
 
-/*-------------------------------------------- authentication Pages*/
+/*-------------------------------------------- Authentication Pages*/
 
 .authentication {
     height: 82vh;
@@ -185,4 +186,15 @@ article i {
 .authentication li {
     font-size: 0.7rem;
     list-style: none;
+}
+
+/*--------------------------------------------  Memories page */
+
+.page-tittle p {
+    color: var(--brand-color);
+    font-size: 1.3em;
+}
+
+.page-tittle h1 {
+    padding-top: 1.5em;
 }
