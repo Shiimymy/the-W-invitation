@@ -4,4 +4,5 @@ from . import views
 urlpatterns = [
     path('', views.index, name='home'),
     path('memories/', views.Memorieslist.as_view(), name='memories'),
+    path('memory_form/', views.MemoryPublication.as_view(), name='memory_form'),
 ]

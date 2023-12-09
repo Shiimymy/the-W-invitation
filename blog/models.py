@@ -17,3 +17,4 @@ class Memories(models.Model):
 
     def __str__(self):
         return f"{self.author} memory:{self.content}"
+

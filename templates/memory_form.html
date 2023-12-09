@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+<article id="form">
+    <h2>Add your Memory</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+        <button class="btn btn-primary" type="submit">Upload</button>
+    </form>
+</article>
+
+{% endblock %}

@@ -15,7 +15,6 @@ Including another URLconf
 """
 from django.urls import path, include
 from django.contrib import admin
-from blog.views import index, Memories
 
 urlpatterns = [
     path('admin/', admin.site.urls),

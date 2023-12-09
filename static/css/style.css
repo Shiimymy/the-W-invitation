@@ -226,3 +226,10 @@ article i {
     border-color: var(--brand-color);
     text-decoration: none;
 }
+
+/*--------------------------------------------  Form page */
+
+#form {
+    margin-top: 3em;
+    margin-bottom: 5em;
+}

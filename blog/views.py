@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from django.views import generic
+from django.shortcuts import render, redirect
+from django.views import generic, View
 from .models import Memories
 
 
@@ -13,3 +13,8 @@ class Memorieslist(generic.ListView):
     queryset = Memories.objects.order_by("-created_on")
     template_name = "memories.html"
     paginate_by = 12
+
+
+class MemoryPublication(generic.ListView):
+    model = Memories
+    template_name = "memory_form.html"
