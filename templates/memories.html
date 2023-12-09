@@ -3,56 +3,59 @@
 {% block content %}
 
 <div class="page-tittle">
-    <h1>Memories</h1>
+    <h1> Memories </h1>
     <p>Share and view pictures
         <br>
         or stories about our wedding.
         <br>
-        <i class="fa-brands fa-pagelines"></i>
     </p>
 </div>
 
-<article id="memories_list">
-        <!--List of approved memories-->
-        <div class="row">
+<div class="d-grid gap-2 col-5 mx-auto">
+    <a class="btn btn-primary" href="{% url 'memory_form' %}" role="button"><i class="fa-solid fa-plus"></i> Add your memory</a>
+</div>
 
-                {% for memories in memories_list %}
-                <div class="card col-5 col-md-4 mt-2 p-2">
-                    <div class="image-container">
-                        {% if "placeholder" in memories.image.url %}
-                        <img class="card-img-top" alt="rose default image" src="../static/rose.jpeg">
-                        {% else %}
-                        <img class="card-img-top" src=" {{ memories.image.url }}">
-                        {% endif %}
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text">
-                            <strong>Author: {{ memories.author }}</strong>
-                            <hr>
-                            <small>{{ memories.created_on }}</small>
-                            <br>
-                            Message: {{ memories.content }}
-                        </p>
-                        <i class="fa-brands fa-pagelines"></i>
-                    </div>
-                </div>
-                    {% endfor %}
-                </div>
-                
-                <!--Memories list Pagination-->
-                {% if is_paginated %}
-                <nav aria-label="Page navigation">
-                    <ul class="pagination justify-content-center">
-                        {% if page_obj.has_previous %}
-                        <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
-                        {% endif %}
-                        {% if page_obj.has_next %}
-                        <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-                        {% endif %}
-                    </ul>
-                </nav>
+<article id="memories_list">
+
+    <!--List of approved memories-->
+    <div id="memories_list" class="row">
+        {% for memories in memories_list %}
+        <div class="card col-5 col-md-4 mt-2 p-2">
+            <div class="image-container">
+                {% if "placeholder" in memories.image.url %}
+                <img class="card-img-top" alt="rose default image" src="../static/rose.jpeg">
+                {% else %}
+                <img class="card-img-top" src=" {{ memories.image.url }}">
                 {% endif %}
+            </div>
+            <div class="card-body">
+                <p class="card-text">
+                    <strong>Author: {{ memories.author }}</strong>
+                    <hr>
+                    <small>{{ memories.created_on }}</small>
+                    <br>
+                    Message: {{ memories.content }}
+                </p>
+                <i class="fa-brands fa-pagelines"></i>
+            </div>
         </div>
+        {% endfor %}
+    </div>
+
+    <!--Memories list Pagination-->
+    {% if is_paginated %}
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+            {% endif %}
+            {% if page_obj.has_next %}
+            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
+    
 </article>
 
 
