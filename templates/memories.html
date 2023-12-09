@@ -12,12 +12,12 @@
     </p>
 </div>
 
-<article>
+<article id="memories_list">
         <!--List of approved memories-->
-        <div id="memories_list" class="row">
+        <div class="row">
 
                 {% for memories in memories_list %}
-                <div class="card col-5 col-md-4 m-2 p-1">
+                <div class="card col-5 col-md-4 mt-2 p-2">
                     <div class="image-container">
                         {% if "placeholder" in memories.image.url %}
                         <img class="card-img-top" alt="rose default image" src="../static/rose.jpeg">
@@ -28,9 +28,12 @@
                     <div class="card-body">
                         <p class="card-text">
                             <strong>Author: {{ memories.author }}</strong>
+                            <hr>
+                            <small>{{ memories.created_on }}</small>
                             <br>
                             Message: {{ memories.content }}
                         </p>
+                        <i class="fa-brands fa-pagelines"></i>
                     </div>
                 </div>
                     {% endfor %}

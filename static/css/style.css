@@ -123,7 +123,7 @@ article {
     margin-top: 2.5em; 
     color: #39261A;
     background-color: #fafafab3; 
-    width: 80%; 
+    width: 90%; 
     border-radius: 10px;
 }
 
@@ -197,4 +197,17 @@ article i {
 
 .page-tittle h1 {
     padding-top: 1.5em;
+}
+
+.page-tittle i {
+    font-size: 1.8em;
+}
+
+.card {
+    background-color: transparent;
+    border: none;
+}
+
+.card-body i {
+    font-size: 1.5em;
 }
