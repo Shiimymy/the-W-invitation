@@ -5,7 +5,9 @@
 {% load crispy_forms_tags %}
 
 <article id="form">
-    <h2>Add your Memory</h2>
+    <h2>Add your Memory 
+        <br>
+        {{ user.username }}</h2>
 
     <form method="POST">
         {% csrf_token %}
