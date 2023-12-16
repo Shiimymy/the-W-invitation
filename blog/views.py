@@ -14,7 +14,7 @@ class Memorieslist(LoginRequiredMixin, generic.ListView):
     model = Memories
     queryset = Memories.objects.order_by("-created_on")
     template_name = "memories.html"
-    paginate_by = 12
+    paginate_by = 9
 
 
 class MemoryPost(LoginRequiredMixin, View):
@@ -29,10 +29,12 @@ class MemoryPost(LoginRequiredMixin, View):
             memory = memory_form.save(commit=False)
             memory.author = request.user
             memory.image = memory_form.cleaned_data.get('image')
-            memory
             memory.save()
             return redirect('memories')
         else: 
             context = {'form': memory_form}
             return render(request, 'memory_form.html', context)
 
+
+def edit_memory(request):
+    return render(request, 'edit.html')

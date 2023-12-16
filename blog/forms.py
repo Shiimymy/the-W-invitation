@@ -8,6 +8,3 @@ class MemoryForm(forms.ModelForm):
     class Meta:
         model = Memories
         fields = ('image', 'content', )
-
-    
-        

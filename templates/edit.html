@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+<article id="form">
+    <h2>You can update the content
+        <br>
+        of your Memory {{ user.username }}
+    </h2>
+
+    <form method="POST" enctype="multipart/form-data">
+        {{ form | crispy }}
+        {% csrf_token %}
+        <button class="btn btn-primary mt-1" type="submit">Update</button>
+    </form>
+</article>
+
+{% endblock %}
