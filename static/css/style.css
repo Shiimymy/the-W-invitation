@@ -227,6 +227,20 @@ article i {
     text-decoration: none;
 }
 
+.btn-custom-2 {
+    border-color: var(--brand-color);
+    color: var(--brand-color);
+    font-weight: 700;
+    background-color: var(--contrast-color);
+    box-shadow: 1px 1px var(--primary-color);
+}
+
+.btn-custom-2:hover {
+    color: var(--contrast-color);
+    background-color: var(--primary-color);
+    text-decoration: none;
+    box-shadow: none;
+}
 
 
 /*--------------------------------------------  Form page */
