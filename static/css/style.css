@@ -212,7 +212,7 @@ article i {
     font-size: 1.5em;
 }
 
-.btn {
+.btn-custom {
     border-color: var(--brand-color);
     color: var(--contrast-color);
     font-weight: 700;
@@ -220,12 +220,14 @@ article i {
     box-shadow: 1px 1px var(--primary-color);
 }
 
-.btn:hover {
+.btn-custom:hover {
     color: var(--brand-color);
     background-color: transparent;
     border-color: var(--brand-color);
     text-decoration: none;
 }
+
+
 
 /*--------------------------------------------  Form page */
 

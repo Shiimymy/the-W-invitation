@@ -11,8 +11,9 @@
     </p>
 </div>
 
+
 <div class="d-grid gap-2 col-5 mx-auto">
-    <a class="btn btn-primary" href="{% url 'memory_form' %}" role="button"><i class="fa-solid fa-plus"></i> Add your memory</a>
+    <a class="btn btn-custom" href="{% url 'memory_form' %}" role="button"><i class="fa-solid fa-plus"></i> Add your memory</a>
 </div>
 
 <article id="memories_list">
@@ -38,7 +39,7 @@
                 </p>
 
                 {% if user %}
-                <a class="btn btn-primary" href="{% url 'edit' memories.id %}" role="button">Edit</a>
+                <a class="btn btn-custom mt-1" href="{% url 'edit' memories.id %}" role="button">Edit</a>
                 {% else %}
                 <i class="fa-brands fa-pagelines"></i>
                 {% endif %}
