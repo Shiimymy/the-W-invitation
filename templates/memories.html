@@ -38,7 +38,7 @@
                 </p>
 
                 {% if user %}
-                <a class="btn btn-primary" href="{% url 'edit' %}" role="button">Edit</a>
+                <a class="btn btn-primary" href="{% url 'edit' memories.id %}" role="button">Edit</a>
                 {% else %}
                 <i class="fa-brands fa-pagelines"></i>
                 {% endif %}

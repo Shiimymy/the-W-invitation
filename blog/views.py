@@ -1,6 +1,7 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404, reverse
 from django.views import generic, View
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
 from .models import Memories
 from .forms import MemoryForm
 
@@ -25,6 +26,7 @@ class MemoryPost(LoginRequiredMixin, View):
     
     def post(self, request):
         memory_form = MemoryForm(request.POST, request.FILES)
+
         if memory_form.is_valid():
             memory = memory_form.save(commit=False)
             memory.author = request.user
@@ -36,5 +38,20 @@ class MemoryPost(LoginRequiredMixin, View):
             return render(request, 'memory_form.html', context)
 
 
-def edit_memory(request):
-    return render(request, 'edit.html')
+@login_required
+def edit_memory(request, memory_id):
+    memory = get_object_or_404(Memories, id=memory_id)
+
+    if request.method == 'POST':
+        memory_form = MemoryForm(request.POST, request.FILES, instance=memory)
+        
+        if memory_form.is_valid():
+            memory = memory_form.save(commit=False)
+            memory.approved = False
+            memory.save()
+            return redirect('memories')
+    else:
+        memory_form = MemoryForm(instance=memory)
+
+    context = {'form': memory_form}
+    return render(request, 'edit.html', context)
