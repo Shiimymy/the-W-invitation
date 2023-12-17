@@ -38,7 +38,7 @@
                     Message: {{ memories.content }}
                 </p>
 
-                {% if user %}
+                {% if memories.author == user %}
                 <a class="btn btn-custom mt-1" href="{% url 'edit' memories.id %}" role="button">Edit</a>
                 <a class="btn btn-custom-2 mt-1" href="/delete/{{ memories.id }}" role="button">Delete</a>
                 <p>{{ message }}</p>
