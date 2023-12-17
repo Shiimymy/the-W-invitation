@@ -11,18 +11,29 @@
 
 
 <article>
-    <h2>Please join us on our wedding
+    <h2>Please join us on our
         <br>
-        day on
+        wedding day
     </h2>
     <hr>
-    <p>the 5th April 2024 <span class="guest-info">at 10am</span></p>
+
+    {% if user.is_authenticated %}
+    <p>on the 5th April 2024 at 10am</p>
     <p>in</p>
-    <p><span class="guest-info">St. Patrick's Cathedral, </span>Dundalk</p>
+    <p>St. Patrick's Cathedral, Dundalk</p>
+    {% else %}
+    <p>in April 2024</p>
+    <p>in</p>
+    <p>Dundalk</p>
+    {% endif %}
+
     <i class="fa-brands fa-pagelines"></i>
 </article>
 
-<article class="guest-info" id="venue">
+
+<article class="venue">
+
+    {% if user.is_authenticated %}
     <h2>Followed by a Lunch
         <br>
         in
@@ -30,6 +41,15 @@
     <hr>
     <p>Ballymascanlon Hotel in Dundalk</p>
     <p>at 12pm</p>
+
+    {% else %}
+    <h2>For more information</h2>
+    <hr>
+    <p id="info-access">
+        Please <a href="{% url 'account_signup' %}">Register</a> or <a href="{% url 'account_login' %}">Login</a>.
+    </p>
+    {% endif %}
+
     <i class="fa-brands fa-pagelines"></i>
 </article>
 

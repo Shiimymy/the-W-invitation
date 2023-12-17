@@ -147,8 +147,19 @@ article i {
     font-size: 30px;
 }
 
-#venue {
+.venue {
     margin-bottom: 2em;
+}
+
+#info-access a {
+    color: var(--brand-color);
+    display: inline;
+    text-decoration: none;
+}
+
+#info-access a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
 }
 
 
