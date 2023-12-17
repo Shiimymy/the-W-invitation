@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404, reverse
+from django.http import HttpResponse
 from django.views import generic, View
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from .models import Memories
 from .forms import MemoryForm
 
@@ -55,3 +57,13 @@ def edit_memory(request, memory_id):
 
     context = {'form': memory_form}
     return render(request, 'edit.html', context)
+
+
+@login_required
+def delete_memory(request, memory_id):
+    memory = get_object_or_404(Memories, id=memory_id)
+    memory.delete()
+    return redirect('memories')
+
+
+
