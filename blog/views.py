@@ -1,9 +1,7 @@
-from django.shortcuts import render, redirect, get_object_or_404, reverse
-from django.http import HttpResponse
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic, View
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
-from django.contrib import messages
 from .models import Memories
 from .forms import MemoryForm
 
@@ -25,7 +23,7 @@ class MemoryPost(LoginRequiredMixin, View):
     def get(self, request):
         context = {'form': MemoryForm()}
         return render(request, 'memory_form.html', context)
-    
+
     def post(self, request):
         memory_form = MemoryForm(request.POST, request.FILES)
 
@@ -46,7 +44,7 @@ def edit_memory(request, memory_id):
 
     if request.method == 'POST':
         memory_form = MemoryForm(request.POST, request.FILES, instance=memory)
-        
+
         if memory_form.is_valid():
             memory = memory_form.save(commit=False)
             memory.approved = False
@@ -64,6 +62,3 @@ def delete_memory(request, memory_id):
     memory = get_object_or_404(Memories, id=memory_id)
     memory.delete()
     return redirect('memories')
-
-
-
