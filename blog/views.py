@@ -12,6 +12,9 @@ def index(request):
 
 
 class Memorieslist(LoginRequiredMixin, generic.ListView):
+    """
+    Renders the Memories page
+    """
     model = Memories
     queryset = Memories.objects.filter(approved=True).order_by("-created_on")
     template_name = "memories.html"
@@ -19,7 +22,10 @@ class Memorieslist(LoginRequiredMixin, generic.ListView):
 
 
 class MemoryPost(LoginRequiredMixin, View):
-
+    """
+    A view to redirect to memory_form.html for login users
+    and add a memory
+    """
     def get(self, request):
         context = {'form': MemoryForm()}
         return render(request, 'memory_form.html', context)
@@ -40,6 +46,7 @@ class MemoryPost(LoginRequiredMixin, View):
 
 @login_required
 def edit_memory(request, memory_id):
+    """Edit Memory if login"""
     memory = get_object_or_404(Memories, id=memory_id)
 
     if request.method == 'POST':
@@ -59,6 +66,7 @@ def edit_memory(request, memory_id):
 
 @login_required
 def delete_memory(request, memory_id):
+    """Delete Memory if login"""
     memory = get_object_or_404(Memories, id=memory_id)
     memory.delete()
     return redirect('memories')

@@ -1,3 +1,4 @@
+"""the_w_invitation URL Configuration"""
 from django.urls import path, include
 from django.contrib import admin
 

@@ -11,7 +11,7 @@
     </p>
 </div>
 
-
+<!--Button to redirect to the form to add memory-->
 <div class="d-grid gap-2 col-5 mx-auto">
     <a class="btn btn-custom" href="{% url 'memory_form' %}" role="button" aria-label="Go to the add memry page"><i class="fa-solid fa-plus"></i> Add your memory</a>
 </div>
@@ -38,6 +38,7 @@
                     Message: {{ memories.content }}
                 </p>
 
+                <!--Visible buttons for user to handle its memories-->
                 {% if memories.author == user %}
                 <a class="btn btn-custom mt-1" href="{% url 'edit' memories.id %}" role="button" aria-label="Go to the page to edit your memory">Edit</a>
                 <a class="btn btn-custom-2 mt-1" href="/delete/{{ memories.id }}" role="button" aria-label="Click to delete your memory">Delete</a>

@@ -4,6 +4,9 @@ from cloudinary.models import CloudinaryField
 
 
 class Memories(models.Model):
+    """
+    Model for Memories
+    """
     image = models.ImageField(upload_to='media/image', default='placeholder')
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="memories_posts"
