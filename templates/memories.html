@@ -13,7 +13,7 @@
 
 
 <div class="d-grid gap-2 col-5 mx-auto">
-    <a class="btn btn-custom" href="{% url 'memory_form' %}" role="button"><i class="fa-solid fa-plus"></i> Add your memory</a>
+    <a class="btn btn-custom" href="{% url 'memory_form' %}" role="button" aria-label="Go to the add memry page"><i class="fa-solid fa-plus"></i> Add your memory</a>
 </div>
 
 <article id="memories_list">
@@ -39,8 +39,8 @@
                 </p>
 
                 {% if memories.author == user %}
-                <a class="btn btn-custom mt-1" href="{% url 'edit' memories.id %}" role="button">Edit</a>
-                <a class="btn btn-custom-2 mt-1" href="/delete/{{ memories.id }}" role="button">Delete</a>
+                <a class="btn btn-custom mt-1" href="{% url 'edit' memories.id %}" role="button" aria-label="Go to the page to edit your memory">Edit</a>
+                <a class="btn btn-custom-2 mt-1" href="/delete/{{ memories.id }}" role="button" aria-label="Click to delete your memory">Delete</a>
                 <p>{{ message }}</p>
                 {% else %}
                 <i class="fa-brands fa-pagelines"></i>
@@ -56,10 +56,10 @@
     <nav aria-label="Page navigation">
         <ul class="pagination justify-content-center">
             {% if page_obj.has_previous %}
-            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link btn btn-primary">&laquo; PREV </a></li>
+            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link btn btn-primary" aria-label="Go to previous page">&laquo; PREV </a></li>
             {% endif %}
             {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link btn btn-primary"> NEXT &raquo;</a></li>
+            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link btn btn-primary" aria-label="Go to next page"> NEXT &raquo;</a></li>
             {% endif %}
         </ul>
     </nav>

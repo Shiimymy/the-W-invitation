@@ -31,7 +31,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
       <div class="container-fluid">
-        <a class="navbar-brand" href="{% url 'home' %}"
+        <a class="navbar-brand" href="{% url 'home' %}" aria-label="Go to Home page"
           ><span class="brand">The W Invitation</span></a
         >
         <button
@@ -51,22 +51,22 @@
               <a
                 class="nav-link"
                 aria-current="page"
-                href="{% url 'home' %}">Home</a>
+                href="{% url 'home' %}" aria-label="Go to Home page">Home</a>
             </li>
             <li class="nav-item">
             {% if user.is_authenticated %}
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'memories' %}">Memories</a>
+                <a class="nav-link" href="{% url 'memories' %}" aria-label="Go to Memories page">Memories</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                <a class="nav-link" href="{% url 'account_logout' %}" aria-label="Go to Logout page">Logout</a>
             </li>
             {% else %}
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
+                <a class="nav-link" href="{% url 'account_signup' %}" aria-label="Go to Register page">Register</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                <a class="nav-link" href="{% url 'account_login' %}" aria-label="Go to Login page">Login</a>
             </li>
             {% endif %}
           </ul>
@@ -84,11 +84,11 @@
     <footer class="footer mt-auto py-2 bg-white">
         <div class="row">
             <div class="col-6 ps-4" id="email">
-                <a href="mailto:contact@email.com">contact@email.com</a>
+                <a href="mailto:contact@email.com" aria-label="Send an email to">contact@email.com</a>
             </div>
             <div class="socials my-auto col-6">
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+                <a href="#" aria-label="Go to our Instagram page (opens in new tab)" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" aria-label="Go to our Facebook page (opens in new tab)"><i class="fa-brands fa-square-facebook"  target="_blank"></i></a>
             </div>
         </div>
     </footer>

@@ -13,7 +13,7 @@
     <form method="POST" enctype="multipart/form-data">
         {{ form | crispy }}
         {% csrf_token %}
-        <button class="btn btn-primary mt-1" type="submit">Update</button>
+        <button class="btn btn-primary mt-1" type="submit" aria-label="Click to update memory (Redirect to Memories page)">Update</button>
     </form>
 </article>
 
