@@ -33,7 +33,7 @@ class MemoryPost(LoginRequiredMixin, View):
             memory.image = memory_form.cleaned_data.get('image')
             memory.save()
             return redirect('memories')
-        else: 
+        else:
             context = {'form': memory_form}
             return render(request, 'memory_form.html', context)
 

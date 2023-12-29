@@ -5,14 +5,21 @@
 {% load crispy_forms_tags %}
 
 <article id="form">
-    <h2>Add your Memory 
+    <h2>Add your 
         <br>
-        {{ user.username }}</h2>
+        memory, {{ user.username }}
+    </h2>
+    <hr>
 
     <form method="POST" enctype="multipart/form-data">
         {{ form | crispy }}
         {% csrf_token %}
-        <button class="btn btn-primary mt-1" type="submit">Upload</button>
+        <small>Your memory will need to be approved before appearing
+            <br>
+            on the Memories page.
+        </small>
+        <br>
+        <button class="btn btn-custom mt-1" type="submit">Add</button>
     </form>
 </article>
 
