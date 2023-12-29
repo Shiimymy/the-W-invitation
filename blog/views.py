@@ -15,7 +15,7 @@ def index(request):
 
 class Memorieslist(LoginRequiredMixin, generic.ListView):
     model = Memories
-    queryset = Memories.objects.order_by("-created_on")
+    queryset = Memories.objects.filter(approved=True).order_by("-created_on")
     template_name = "memories.html"
     paginate_by = 9
 
