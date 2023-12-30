@@ -7,14 +7,19 @@
 <article id="form">
     <h2>You can update the content
         <br>
-        of your Memory {{ user.username }}
+        of your Memory, {{ user.username }}
     </h2>
 
     <!--Edit form-->
     <form method="POST" enctype="multipart/form-data">
         {{ form | crispy }}
         {% csrf_token %}
-        <button class="btn btn-primary mt-1" type="submit" aria-label="Click to update memory (Redirect to Memories page)">Update</button>
+        <small>Your updated memory will need to be approved before
+            <br>
+            appearing on the Memories page.
+        </small>
+        <br>
+        <button class="btn btn-custom mt-1" type="submit" aria-label="Click to update memory (Redirect to Memories page)">Update</button>
     </form>
 </article>
 
