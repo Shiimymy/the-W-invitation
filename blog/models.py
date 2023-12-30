@@ -25,9 +25,11 @@ class Memories(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     content = models.TextField()
     approved = models.BooleanField(default=False)
-    location = models.CharField(max_length=20, choices=LOCATIONS)
+    location = models.CharField(
+        max_length=20, choices=LOCATIONS, default='Venue')
     people = models.ManyToManyField(User, related_name='other_users')
-    inviter = models.CharField(max_length=10, choices=INVITER_OPTION)
+    inviter = models.CharField(
+        max_length=10, choices=INVITER_OPTION, default='Bride')
 
     class Meta:
         ordering = ["created_on"]
