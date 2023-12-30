@@ -9,4 +9,4 @@ class MemoryForm(forms.ModelForm):
     """
     class Meta:
         model = Memories
-        fields = ('image', 'content', )
+        fields = ('image', 'content', 'location', 'people', 'inviter',)
