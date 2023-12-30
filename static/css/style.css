@@ -256,8 +256,25 @@ article i {
 
 /*--------------------------------------------  Form page */
 
-#form {
+.form {
     margin-top: 3em;
     margin-bottom: 5em;
     padding: 1em;
 }
+
+.form-box {
+    width: 65%;
+    margin: auto;
+    padding-top: 1.5em;
+}
+
+label {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+input[type=file] {
+    color: var(--brand-color);
+}
+
+

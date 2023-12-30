@@ -4,7 +4,7 @@
 
 {% load crispy_forms_tags %}
 
-<article id="form">
+<article class="form">
     <h2>Add your 
         <br>
         memory, {{ user.username }}
@@ -12,16 +12,18 @@
     <hr>
 
     <!--Form to add memory-->
-    <form method="POST" enctype="multipart/form-data">
-        {{ form | crispy }}
-        {% csrf_token %}
-        <small>Your memory will need to be approved before appearing
+    <div class="form-box">
+        <form method="POST" enctype="multipart/form-data">
+            {{ form | crispy }}
+            {% csrf_token %}
+            <small>Your memory will need to be approved before appearing
+                <br>
+                on the Memories page.
+            </small>
             <br>
-            on the Memories page.
-        </small>
-        <br>
-        <button class="btn btn-custom mt-1" type="submit" aria-label="Click to add memory (Redirect to Memories page)">Add</button>
-    </form>
+            <button class="btn btn-custom mt-1" type="submit" aria-label="Click to add memory (Redirect to Memories page)">Add</button>
+        </form>
+    </div>
 </article>
 
 {% endblock %}
