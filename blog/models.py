@@ -7,6 +7,17 @@ class Memories(models.Model):
     """
     Model for Memories
     """
+    LOCATIONS = (
+        ('church', 'Church'),
+        ('town_hall', 'Town Hall'),
+        ('venue', 'Venue'),
+    )
+
+    INVITER_OPTION = (
+        ('bride', 'Bride'),
+        ('groom', 'Groom'),
+    )
+
     image = CloudinaryField('image', default='placeholder')
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="memories_posts"
@@ -14,6 +25,9 @@ class Memories(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     content = models.TextField()
     approved = models.BooleanField(default=False)
+    location = models.CharField(max_length=20, choices=LOCATIONS)
+    people = models.ManyToManyField(User, related_name='other_users')
+    inviter = models.CharField(max_length=10, choices=INVITER_OPTION)
 
     class Meta:
         ordering = ["created_on"]
