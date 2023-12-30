@@ -27,7 +27,8 @@ class Memories(models.Model):
     approved = models.BooleanField(default=False)
     location = models.CharField(
         max_length=20, choices=LOCATIONS, default='Venue')
-    people = models.ManyToManyField(User, related_name='other_users')
+    people = models.ManyToManyField(
+        User, related_name='other_users', blank=True)
     inviter = models.CharField(
         max_length=10, choices=INVITER_OPTION, default='Bride')
 
