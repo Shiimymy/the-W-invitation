@@ -18,6 +18,34 @@
 
 <article id="memories_list">
 
+    <!--Filter buttons-->
+    <div>
+        <div class="btn-group m-3">
+            <button type="button" class="btn btn-custom dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                Location
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">???</a></li>
+            </ul>
+        </div>
+        <div class="btn-group m-3">
+            <button type="button" class="btn btn-custom dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                Inviter
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">???</a></li>
+            </ul>
+        </div>
+        <div class="btn-group m-3">
+            <button type="button" class="btn btn-custom dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                People
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">???</a></li>
+            </ul>
+        </div>
+    </div>
+
     <!--List of approved memories-->
     <div id="memories_list" class="row">
         {% for memories in memories_list %}
