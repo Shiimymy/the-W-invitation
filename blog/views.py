@@ -32,11 +32,13 @@ class MemoryPost(LoginRequiredMixin, View):
 
     def post(self, request):
         memory_form = MemoryForm(request.POST, request.FILES)
-
+        print(memory_form.errors)
         if memory_form.is_valid():
             memory = memory_form.save(commit=False)
             memory.author = request.user
             memory.image = memory_form.cleaned_data.get('image')
+            memory.location = memory_form.cleaned_data.get('location')
+            memory.inviter = memory_form.cleaned_data.get('inviter')
             memory.save()
             return redirect('memories')
         else:

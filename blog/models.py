@@ -1,36 +1,35 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from multiselectfield import MultiSelectField
 
 
 class Memories(models.Model):
     """
-    Model for Memories
+    Model for Memories posts
     """
-    LOCATIONS = (
-        ('church', 'Church'),
-        ('town_hall', 'Town Hall'),
-        ('venue', 'Venue'),
-    )
 
+    LOCATIONS = (
+        ('Church', 'Church'),
+        ('Town Hall', 'Town Hall'),
+        ('Venue', 'Venue'),
+        ('Other', 'Other'),
+    )
+    
     INVITER_OPTION = (
         ('bride', 'Bride'),
         ('groom', 'Groom'),
     )
 
-    image = CloudinaryField('image', default='placeholder')
+    image = CloudinaryField('image', default='placeholder', blank=True)
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="memories_posts"
     )
     created_on = models.DateTimeField(auto_now_add=True)
     content = models.TextField()
     approved = models.BooleanField(default=False)
-    location = models.CharField(
-        max_length=20, choices=LOCATIONS, default='Venue')
-    people = models.ManyToManyField(
-        User, related_name='other_users', blank=True)
-    inviter = models.CharField(
-        max_length=10, choices=INVITER_OPTION, default='Bride')
+    location = models.CharField(max_length=20, choices=LOCATIONS)
+    inviter = MultiSelectField(choices=INVITER_OPTION, max_choices=2, default='Bride')
 
     class Meta:
         ordering = ["created_on"]

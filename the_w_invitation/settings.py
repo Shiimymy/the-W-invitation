@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'multiselectfield',
     'django_summernote',
     'crispy_forms',
     'blog',
