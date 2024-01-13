@@ -5,32 +5,38 @@
 :root {
     --primary-color: #39261A;
     --contrast-color: #fafafa;
-    --brand-color: #C2473D; 
+    --brand-color: #C2473D;
 }
 
-*, .row{
+*,
+.row {
     font-family: 'Roboto',
         sans-serif;
     margin: 0px;
     padding: 0px;
 }
- body {
+
+body {
     background: var(--contrast-color);
- }
+}
 
 nav {
     border-bottom: var(--primary-color) 1px solid;
 }
 
-h1, h2 {
+h1,
+h2 {
     font-family: 'Oswald', sans-serif;
 }
 
-h2, .navbar-light .navbar-brand, .navbar-light .navbar-nav .nav-link {
+h2,
+.navbar-light .navbar-brand,
+.navbar-light .navbar-nav .nav-link {
     color: var(--brand-color);
 }
 
-.navbar-light .navbar-brand, .navbar-light .navbar-nav .nav-link {
+.navbar-light .navbar-brand,
+.navbar-light .navbar-nav .nav-link {
     letter-spacing: 1px;
 }
 
@@ -49,7 +55,8 @@ a:hover {
 
 /*------------------------------ Footer */
 
-footer, footer a {
+footer,
+footer a {
     color: var(--brand-color);
     text-decoration: none;
 }
@@ -120,10 +127,10 @@ header p {
 
 article {
     margin: auto;
-    margin-top: 2.5em; 
+    margin-top: 2.5em;
     color: #39261A;
-    background-color: #fafafab3; 
-    width: 90%; 
+    background-color: #fafafab3;
+    width: 90%;
     border-radius: 10px;
 }
 
@@ -179,10 +186,10 @@ article i {
 }
 
 .authentication button {
-   border: 1px solid var(--primary-color); 
-   font-weight: 700;
-   color: var(--contrast-color);
-   background-color: var(--brand-color);
+    border: 1px solid var(--primary-color);
+    font-weight: 700;
+    color: var(--contrast-color);
+    background-color: var(--brand-color);
     padding: 5px 10px;
     border-radius: 4px;
 }
@@ -253,6 +260,12 @@ article i {
     box-shadow: none;
 }
 
+.btn-custom-3 {
+    border-color: var(--brand-color);
+    color: var(--brand-color);
+    font-weight: 600;
+    background-color: var(--contrast-color);
+}
 
 /*--------------------------------------------  Form page */
 
@@ -276,5 +289,3 @@ label {
 input[type=file] {
     color: var(--brand-color);
 }
-
-

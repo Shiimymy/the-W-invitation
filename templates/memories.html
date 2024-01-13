@@ -18,25 +18,24 @@
 
 <article id="memories_list">
 
-    <!--Filter buttons-->
-    <div>
-        <div class="btn-group m-3">
-            <button type="button" class="btn btn-custom dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                Location
-            </button>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">???</a></li>
-            </ul>
-        </div>
-        <div class="btn-group m-3">
-            <button type="button" class="btn btn-custom dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                Inviter
-            </button>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">???</a></li>
-            </ul>
-        </div>
-    </div>
+    <!--Filter Form-->
+    <form method="GET">
+        <label for="location">Filter by Location:</label>
+        <select class="btn btn-custom-3" name="location" id="location">
+            <option value="">All</option>
+            <option value="Church">Church</option>
+            <option value="Town Hall">Town Hall</option>
+            <option value="Venue">Venue</option>
+            <option value="Other">Other</option>
+        </select>
+        <label for="inviter">By Inviter:</label>
+        <select class="btn btn-custom-3" name="inviter" id="inviter">
+            <option value="">Both</option>
+            <option value="Bride">Bride</option>
+            <option value="Groom">Groom</option>
+        </select>
+        <input type="submit" value="Filter" class="btn btn-custom">
+    </form>
 
     <!--List of approved memories-->
     <div id="memories_list" class="row">
