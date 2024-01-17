@@ -27,11 +27,15 @@ class Memorieslist(LoginRequiredMixin, generic.ListView):
 
         memories = Memories.objects.filter(approved=True).order_by("-created_on")
         selected_location = self.request.GET.get('location', '')
-        selected_inviter = self.request.GET.get('inviter', '')        if selected_location:
+        selected_inviter = self.request.GET.get('inviter', '')        
+        
+        if selected_location:
             memories = memories.filter(location=selected_location)
 
         if selected_inviter:
             memories = memories.filter(inviter__contains=selected_inviter)
+
+        return memories
 
 
 class MemoryPost(LoginRequiredMixin, View):
