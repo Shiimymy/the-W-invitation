@@ -16,9 +16,22 @@ class Memorieslist(LoginRequiredMixin, generic.ListView):
     Renders the Memories page
     """
     model = Memories
-    queryset = Memories.objects.filter(approved=True).order_by("-created_on")
     template_name = "memories.html"
     paginate_by = 9
+
+    def get_queryset(self):
+
+        """
+        Filter Memories by location and/or inviter in the page
+        """
+
+        memories = Memories.objects.filter(approved=True).order_by("-created_on")
+        selected_location = self.request.GET.get('location', '')
+        selected_inviter = self.request.GET.get('inviter', '')        if selected_location:
+            memories = memories.filter(location=selected_location)
+
+        if selected_inviter:
+            memories = memories.filter(inviter__contains=selected_inviter)
 
 
 class MemoryPost(LoginRequiredMixin, View):

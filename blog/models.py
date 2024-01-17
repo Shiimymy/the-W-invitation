@@ -17,8 +17,8 @@ class Memories(models.Model):
     )
     
     INVITER_OPTION = (
-        ('bride', 'Bride'),
-        ('groom', 'Groom'),
+        ('Bride', 'Bride'),
+        ('Groom', 'Groom'),
     )
 
     image = CloudinaryField('image', default='placeholder', blank=True)
@@ -29,7 +29,7 @@ class Memories(models.Model):
     content = models.TextField()
     approved = models.BooleanField(default=False)
     location = models.CharField(max_length=20, choices=LOCATIONS)
-    inviter = MultiSelectField(choices=INVITER_OPTION, max_choices=2, default='Bride')
+    inviter = MultiSelectField(choices=INVITER_OPTION, max_choices=2)
 
     class Meta:
         ordering = ["created_on"]

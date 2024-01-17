@@ -19,8 +19,8 @@
 <article id="memories_list">
 
     <!--Filter Form-->
-    <form method="GET">
-        <label for="location">Filter by Location:</label>
+    <form method="GET" action="{% url 'memories' %}">
+        <label for="location">Location:</label>
         <select class="btn btn-custom-3" name="location" id="location">
             <option value="">All</option>
             <option value="Church">Church</option>
@@ -28,12 +28,13 @@
             <option value="Venue">Venue</option>
             <option value="Other">Other</option>
         </select>
-        <label for="inviter">By Inviter:</label>
-        <select class="btn btn-custom-3" name="inviter" id="inviter">
-            <option value="">Both</option>
-            <option value="Bride">Bride</option>
-            <option value="Groom">Groom</option>
-        </select>
+
+        <input class="form-check-input" type="checkbox" id="Bride" name="inviter" value="Bride">
+        <label class="form-check-label" for="Bride">Bride guest</label>
+
+        <input class="form-check-input" type="checkbox" id="Groom" name="inviter" value="Groom">
+        <label class="form-check-label" for="Groom">Groom guest</label>
+    
         <input type="submit" value="Filter" class="btn btn-custom">
     </form>
 
@@ -51,8 +52,12 @@
             <div class="card-body">
                 <p class="card-text">
                     <strong>Author: {{ memories.author }}</strong>
+                    <br>
+                    {{memories.inviter}}
                     <hr>
                     <small>{{ memories.created_on }}</small>
+                    <br>
+                    Picture location: {{memories.location}}
                     <br>
                     Message: {{ memories.content }}
                 </p>
@@ -61,7 +66,6 @@
                 {% if memories.author == user %}
                 <a class="btn btn-custom mt-1" href="{% url 'edit' memories.id %}" role="button" aria-label="Go to the page to edit your memory">Edit</a>
                 <a class="btn btn-custom-2 mt-1" href="/delete/{{ memories.id }}" role="button" aria-label="Click to delete your memory">Delete</a>
-                <p>{{ message }}</p>
                 {% else %}
                 <i class="fa-brands fa-pagelines"></i>
                 {% endif %}

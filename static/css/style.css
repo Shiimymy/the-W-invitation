@@ -1,291 +1,288 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Roboto:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Oswald&family=Roboto:wght@300&display=swap");
 
 /*--------------------------------------------  General */
 
 :root {
-    --primary-color: #39261A;
-    --contrast-color: #fafafa;
-    --brand-color: #C2473D;
+  --primary-color: #39261a;
+  --contrast-color: #fafafa;
+  --brand-color: #c2473d;
 }
 
 *,
 .row {
-    font-family: 'Roboto',
-        sans-serif;
-    margin: 0px;
-    padding: 0px;
+  font-family: "Roboto", sans-serif;
+  margin: 0px;
+  padding: 0px;
 }
 
 body {
-    background: var(--contrast-color);
+  background: var(--contrast-color);
 }
 
 nav {
-    border-bottom: var(--primary-color) 1px solid;
+  border-bottom: var(--primary-color) 1px solid;
 }
 
 h1,
 h2 {
-    font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
 }
 
 h2,
 .navbar-light .navbar-brand,
 .navbar-light .navbar-nav .nav-link {
-    color: var(--brand-color);
+  color: var(--brand-color);
 }
 
 .navbar-light .navbar-brand,
 .navbar-light .navbar-nav .nav-link {
-    letter-spacing: 1px;
+  letter-spacing: 1px;
 }
 
 a:hover {
-    color: var(--primary-color);
-    text-decoration: underline;
+  color: var(--primary-color);
+  text-decoration: underline;
 }
 
 /*------------------------------ Block Content */
 
 .main {
-    position: relative;
-    background-image: url("/static/flower-frame.png");
-    background-size: cover;
+  position: relative;
+  background-image: url("/static/flower-frame.png");
+  background-size: cover;
 }
 
 /*------------------------------ Footer */
 
 footer,
 footer a {
-    color: var(--brand-color);
-    text-decoration: none;
+  color: var(--brand-color);
+  text-decoration: none;
 }
 
 footer {
-    border-top: #39261A 1px solid;
+  border-top: #39261a 1px solid;
 }
 
 #email {
-    text-align: left;
-    padding-top: 2px;
+  text-align: left;
+  padding-top: 2px;
 }
 
 .socials {
-    text-align: right;
+  text-align: right;
 }
 
 footer .fa-brands {
-    font-size: 25px;
-    padding: 5px;
+  font-size: 25px;
+  padding: 5px;
 }
-
 
 /*-------------------------------------------- Home Page*/
 
 /*------------------------------ Hero */
 
 .tittle {
-    position: absolute;
+  position: absolute;
 }
 
 header {
-    height: 90vh;
-    position: relative;
+  height: 90vh;
+  position: relative;
 }
 
 header::before {
-    content: "";
-    background-image: url("/static/rings.jpg");
-    position: absolute;
-    background-size: cover;
-    opacity: 50%;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
+  content: "";
+  background-image: url("/static/rings.jpg");
+  position: absolute;
+  background-size: cover;
+  opacity: 50%;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
 }
 
 .container-fluid {
-    padding: 0px;
+  padding: 0px;
 }
 
 .animate__animated {
-    color: var(--primary-color);
+  color: var(--primary-color);
 }
 
 h1 {
-    padding-top: 2em;
-    font-size: 6em;
-    color: var(--primary-color);
+  padding-top: 2em;
+  font-size: 6em;
+  color: var(--primary-color);
 }
 
 header p {
-    font-size: 2em;
+  font-size: 2em;
 }
 
 /*------------------------------ Article */
 
 article {
-    margin: auto;
-    margin-top: 2.5em;
-    color: #39261A;
-    background-color: #fafafab3;
-    width: 90%;
-    border-radius: 10px;
+  margin: auto;
+  margin-top: 2.5em;
+  color: #39261a;
+  background-color: #fafafab3;
+  width: 90%;
+  border-radius: 10px;
 }
 
 h2 {
-    font-size: 2.5em;
+  font-size: 2.5em;
 }
 
 article p {
-    margin: 0;
+  margin: 0;
 }
 
 article hr {
-    padding: 2px;
-    background-color: var(--primary-color);
-    width: 40%;
-    margin: auto;
+  padding: 2px;
+  background-color: var(--primary-color);
+  width: 40%;
+  margin: auto;
 }
 
 article i {
-    padding: 7px;
-    font-size: 30px;
+  padding: 7px;
+  font-size: 30px;
 }
 
 .venue {
-    margin-bottom: 2em;
+  margin-bottom: 2em;
 }
 
 #info-access a {
-    color: var(--brand-color);
-    display: inline;
-    text-decoration: none;
+  color: var(--brand-color);
+  display: inline;
+  text-decoration: none;
 }
 
 #info-access a:hover {
-    color: var(--primary-color);
-    text-decoration: underline;
+  color: var(--primary-color);
+  text-decoration: underline;
 }
-
 
 /*-------------------------------------------- Authentication Pages*/
 
 .authentication {
-    height: 82vh;
-    color: var(--primary-color);
+  height: 82vh;
+  color: var(--primary-color);
 }
 
 .authentication a {
-    color: var(--primary-color);
+  color: var(--primary-color);
 }
 
 .authentication a:hover {
-    color: var(--brand-color);
+  color: var(--brand-color);
 }
 
 .authentication button {
-    border: 1px solid var(--primary-color);
-    font-weight: 700;
-    color: var(--contrast-color);
-    background-color: var(--brand-color);
-    padding: 5px 10px;
-    border-radius: 4px;
+  border: 1px solid var(--primary-color);
+  font-weight: 700;
+  color: var(--contrast-color);
+  background-color: var(--brand-color);
+  padding: 5px 10px;
+  border-radius: 4px;
 }
 
 .authentication button:hover {
-    border: 1px solid var(--brand-color);
-    color: var(--brand-color);
-    background-color: var(--contrast-color);
-    transition: 1s;
+  border: 1px solid var(--brand-color);
+  color: var(--brand-color);
+  background-color: var(--contrast-color);
+  transition: 1s;
 }
 
 .authentication li {
-    font-size: 0.7rem;
-    list-style: none;
+  font-size: 0.7rem;
+  list-style: none;
 }
 
 /*--------------------------------------------  Memories page */
 
 .page-tittle p {
-    color: var(--brand-color);
-    font-size: 1.3em;
+  color: var(--brand-color);
+  font-size: 1.3em;
 }
 
 .page-tittle h1 {
-    padding-top: 1.5em;
+  padding-top: 1.5em;
 }
 
 .page-tittle i {
-    font-size: 1.8em;
+  font-size: 1.8em;
 }
 
 .card {
-    background-color: transparent;
-    border: none;
+  background-color: transparent;
+  border: none;
 }
 
 .card-body i {
-    font-size: 1.5em;
+  font-size: 1.5em;
 }
 
 .btn-custom {
-    border-color: var(--brand-color);
-    color: var(--contrast-color);
-    font-weight: 700;
-    background-color: var(--brand-color);
-    box-shadow: 1px 1px var(--primary-color);
+  border-color: var(--brand-color);
+  color: var(--contrast-color);
+  font-weight: 700;
+  background-color: var(--brand-color);
+  box-shadow: 1px 1px var(--primary-color);
 }
 
 .btn-custom:hover {
-    color: var(--brand-color);
-    background-color: transparent;
-    border-color: var(--brand-color);
-    text-decoration: none;
+  color: var(--brand-color);
+  background-color: transparent;
+  border-color: var(--brand-color);
+  text-decoration: none;
 }
 
 .btn-custom-2 {
-    border-color: var(--brand-color);
-    color: var(--brand-color);
-    font-weight: 700;
-    background-color: var(--contrast-color);
-    box-shadow: 1px 1px var(--primary-color);
+  border-color: var(--brand-color);
+  color: var(--brand-color);
+  font-weight: 700;
+  background-color: var(--contrast-color);
+  box-shadow: 1px 1px var(--primary-color);
 }
 
 .btn-custom-2:hover {
-    color: var(--contrast-color);
-    background-color: var(--primary-color);
-    text-decoration: none;
-    box-shadow: none;
+  color: var(--contrast-color);
+  background-color: var(--primary-color);
+  text-decoration: none;
+  box-shadow: none;
 }
 
 .btn-custom-3 {
-    border-color: var(--brand-color);
-    color: var(--brand-color);
-    font-weight: 600;
-    background-color: var(--contrast-color);
+  border-color: var(--brand-color);
+  color: var(--brand-color);
+  font-weight: 600;
+  background-color: var(--contrast-color);
 }
 
 /*--------------------------------------------  Form page */
 
 .form {
-    margin-top: 3em;
-    margin-bottom: 5em;
-    padding: 1em;
+  margin-top: 3em;
+  margin-bottom: 5em;
+  padding: 1em;
 }
 
 .form-box {
-    width: 65%;
-    margin: auto;
-    padding-top: 1.5em;
+  width: 65%;
+  margin: auto;
+  padding-top: 1.5em;
 }
 
 label {
-    color: var(--primary-color);
-    font-weight: 700;
+  color: var(--primary-color);
+  font-weight: 700;
 }
 
-input[type=file] {
-    color: var(--brand-color);
+input[type="file"] {
+  color: var(--brand-color);
 }
