@@ -1,28 +1,31 @@
-{% extends "base.html" %}
-
-{% block content %}
-
-{% load crispy_forms_tags %}
+{% extends "base.html" %} {% block content %} {% load crispy_forms_tags %}
 
 <article class="form">
-    <h2>You can update the content
-        <br>
-        of your Memory, {{ user.username }}
-    </h2>
+  <h2>
+    You can update the content
+    <br />
+    of your Memory, {{ user.username }}
+  </h2>
 
-    <!--Edit form-->
-    <div class="form-box">
-        <form method="POST" enctype="multipart/form-data">
-            {{ form | crispy }}
-            {% csrf_token %}
-            <small>Your updated memory will need to be approved before
-                <br>
-                appearing on the Memories page.
-            </small>
-            <br>
-            <button class="btn btn-custom mt-1" type="submit" aria-label="Click to update memory (Redirect to Memories page)">Update</button>
-        </form>
-    </div>
+  <!--Edit form-->
+  <div class="form-box">
+    <form method="POST" enctype="multipart/form-data">
+      {{ form | crispy }} {% csrf_token %}
+      <small
+        >Your updated memory will need to be approved before
+        <br />
+        appearing on the Memories page.
+      </small>
+      <br />
+      <button
+        class="btn btn-custom mt-1"
+        type="submit"
+        aria-label="Click to update memory (Redirect to Memories page)"
+      >
+        Update
+      </button>
+    </form>
+  </div>
 </article>
 
 {% endblock %}

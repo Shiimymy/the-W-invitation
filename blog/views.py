@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic, View
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from .models import Memories
 from .forms import MemoryForm
 
@@ -57,6 +58,7 @@ class MemoryPost(LoginRequiredMixin, View):
             memory.location = memory_form.cleaned_data.get('location')
             memory.inviter = memory_form.cleaned_data.get('inviter')
             memory.save()
+            messages.add_message(request, messages.SUCCESS, "Memory submited, it will show once approved by admin.")
             return redirect('memories')
         else:
             context = {'form': memory_form}
@@ -75,6 +77,7 @@ def edit_memory(request, memory_id):
             memory = memory_form.save(commit=False)
             memory.approved = False
             memory.save()
+            messages.add_message(request, messages.SUCCESS, "Memory updated, itwill show once approved by admin.")        
             return redirect('memories')
     else:
         memory_form = MemoryForm(instance=memory)
@@ -88,4 +91,5 @@ def delete_memory(request, memory_id):
     """Delete Memory if login"""
     memory = get_object_or_404(Memories, id=memory_id)
     memory.delete()
+    messages.add_message(request, messages.WARNING, "Memory deleted successfuly!") 
     return redirect('memories')
