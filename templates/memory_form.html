@@ -1,29 +1,39 @@
-{% extends "base.html" %}
-
-{% block content %}
-
-{% load crispy_forms_tags %}
+{% extends "base.html" %} {% block content %} {% load crispy_forms_tags %}
 
 <article class="form">
-    <h2>Add your 
-        <br>
-        memory, {{ user.username }}
-    </h2>
-    <hr>
+  <h2>
+    Add your
+    <br />
+    memory, {{ user.username }}
+  </h2>
+  <hr />
 
-    <!--Form to add memory-->
-    <div class="form-box">
-        <form method="POST" enctype="multipart/form-data">
-            {{ form | crispy }}
-            {% csrf_token %}
-            <small>Your memory will need to be approved before appearing
-                <br>
-                on the Memories page.
-            </small>
-            <br>
-            <button class="btn btn-custom mt-1" type="submit" aria-label="Click to add memory (Redirect to Memories page)">Add</button>
-        </form>
-    </div>
+  <!--Form to add memory-->
+  <div class="form-box">
+    <form method="POST" enctype="multipart/form-data">
+      {{ form | crispy }} {% csrf_token %}
+      <small
+        >Your memory will need to be approved before appearing
+        <br />
+        on the Memories page.
+      </small>
+      <br />
+      <button
+        class="btn btn-custom mt-1"
+        type="submit"
+        aria-label="Click to add memory (Redirect to Memories page)"
+      >
+        Add
+      </button>
+      <a
+        class="btn btn-custom-2 mt-1"
+        href="{% url 'memories' %}"
+        role="button"
+        aria-label="Cancel action (Redirect to Memories page)"
+        >Cancel</a
+      >
+    </form>
+  </div>
 </article>
 
 {% endblock %}
