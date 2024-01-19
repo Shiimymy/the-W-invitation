@@ -1,39 +1,150 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# THE W INVITATION
 
-Welcome,
 
-This is the Code Institute student template for Codeanywhere. If you are using Gitpod then you need [this template](https://github.com/Code-Institute-Org/gitpod-full-template) instead.  We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+## Table of Contents
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **August 30th, 2023**
+## User Experience (UX)
 
-## Codeanywhere Reminders
+### Project Goals
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
+### Agile Methodology
 
-`python3 -m http.server`
+#### User Stories
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+1. EPICS
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
+2. USER STORIES
 
-`http_server`
+### Target Audience
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+### First time user
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+### Registered user
 
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+### Admin user
 
-To log into the Heroku toolbelt CLI:
+## Design
 
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+### Color Scheme
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+### ??? Images
 
----
+### Wireframes
 
-Happy coding!
+### Data Model
+
+### User Journey
+
+### Database Scheme
+
+## Security Features
+
+### User Authentication
+
+### Login Decorator and ???
+
+### CSRF Protection
+
+### Form Validation
+
+### search for more ...
+
+## Features
+
+### Existing Features
+
+### Base Page 
+* Navigation bar login/out
+* Footer
+
+### Authentication pages
+
+* Register
+* Login
+* Logout
+
+### Home page
+
+1. log out
+2. Login
+
+
+### Memories Page
+
+### Add Memory page 
+
+### Edit Memory page
+  
+
+### Features Left to Implement
+
+* Guest page 
+* Likes 
+* Contact Page
+
+## Technologies Used
+
+### Languages Used
+
+HTML5
+CSS3
+JavaScript
+Python
+
+### Databases Used
+
+ElephantSQL - Postgres database
+Cloudinary - Online static file storage
+
+### Frameworks Used
+
+Django - Python framework
+Bootstrap 4.6.1 - CSS framework
+
+### Programs Used
+
+Github - Storing the code online
+Heroku - Used as the cloud-based platform to deploy the site.
+Google Fonts - Import main font the website.
+Am I Responsive - To show the website image on a range of devices.
+Favicon Generator - Used to create a favicon
+JSHint - Used to validate JavaScript
+W3C Markup Validation Service - Used to validate HTML
+CSS Validation Service - Used to validate CSS
+CI Python Linter - Used to validate Python
+
+## Deployment and Local developement
+
+### Local Developement
+
+### ElephantSQL Database
+
+### Cloudinary
+
+### Heroku Deployment
+
+## Testing
+
+Please see TESTING.md for all the detailed testing performed.
+
+## References
+
+### Docs
+
+Stack Overflow
+Code Institute
+Bootstrap 4.6
+Django docs
+Django Allauth
+Cloudinary
+Google
+see for more ...
+
+### Content
+
+image
+content
+
+### Acknowledgments
+
+mentor + tutors
