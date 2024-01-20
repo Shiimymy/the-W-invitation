@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-shiimymy-the-w-invitatio-wbdccx8n5a.us2.codeanyapp.com',
+ALLOWED_HOSTS = ['8000-shiimymy-the-w-invitatio-wbdccx8n5a.us2.codeanyapp.com', '8002-shiimymy-the-w-invitatio-wbdccx8n5a.us2.codeanyapp.com',
                  'the-w-invitation-104939a4f065.herokuapp.com']
 
 

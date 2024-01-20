@@ -91,5 +91,5 @@ def delete_memory(request, memory_id):
     """Delete Memory if login"""
     memory = get_object_or_404(Memories, id=memory_id)
     memory.delete()
-    messages.add_message(request, messages.WARNING, "Memory deleted successfuly!") 
+    messages.add_message(request, messages.SUCCESS, "Memory deleted successfuly!") 
     return redirect('memories')
