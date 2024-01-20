@@ -22,7 +22,7 @@
     <form method="GET" action="{% url 'memories' %}">
         <span class="location">
             <label for="location">Location:</label>
-            <select class="btn btn-custom-3" name="location" id="location">
+            <select class="btn btn-custom-3" name="location" id="location" aria-label="Select a location filter">
                 <option value="">All</option>
                 <option value="Church">Church</option>
                 <option value="Town Hall">Town Hall</option>
@@ -31,12 +31,12 @@
             </select>
         </span>
         <span class="inviter">
-            <input class="form-check-input" type="checkbox" id="Bride" name="inviter" value="Bride">
+            <input class="form-check-input" type="checkbox" id="Bride" name="inviter" value="Bride" aria-label="Check to filter by Bride guests">
             <label class="form-check-label" for="Bride">Bride guest</label>
-            <input class="form-check-input" type="checkbox" id="Groom" name="inviter" value="Groom">
+            <input class="form-check-input" type="checkbox" id="Groom" name="inviter" value="Groom" aria-label="Check to filter by Groom guests">
             <label class="form-check-label" for="Groom">Groom guest</label>
         </span>
-        <input type="submit" value="Filter" class="btn btn-custom">
+        <input type="submit" aria-label="Confirm selected filter" value="Filter" class="btn btn-custom">
         <a class="btn btn-custom-2 mt-1" href="{% url 'memories' %}" role="button" aria-label="Clear filter">Clear</a>
     </form>
 
@@ -46,9 +46,9 @@
         <div class="card col-5 col-md-4 mt-2 p-2">
             <div class="image-container">
                 {% if "placeholder" in memories.image.url %}
-                <img class="card-img-top" alt="rose default image" src="../static/rose.jpeg">
+                <img class="card-img-top" alt="rose, default image" src="../static/rose.jpeg">
                 {% else %}
-                <img class="card-img-top" src=" {{ memories.image.url }}">
+                <img class="card-img-top" alt="customized guest image" src=" {{ memories.image.url }}">
                 {% endif %}
             </div>
             <div class="card-body">

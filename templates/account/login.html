@@ -1,28 +1,39 @@
-{% extends "base.html" %}
-{% load i18n %}
-{%block head_title %}{% trans "Sign In" %}{% endblock %}
-
-{% block content %}
+{% extends "base.html" %} {% load i18n %} {%block head_title %}{% trans "Sign
+In" %}{% endblock %} {% block content %}
 
 <div class="container mt-4 authentication">
-
-    <div class="row">
-        <div class="col-md-6 offset-md-3 card py-3">
-            <h2 class="text-center brand-centered">Sign In</h2>
-            <p class="text-center">If you have not created an account yet,
-                then <a class="link" href="{{ signup_url }}">sign up</a> first.
-            </p>
-            <form class="login" method="POST" action="{% url 'account_login' %}">
-                {% csrf_token %}
-                <div class="mb-3">
-                    {{ form.as_p }}
-                </div>
-                {% if redirect_field_value %}
-                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-                {% endif %}
-                <button class="btn btn-signup btn-lg w-40" type="submit">Sign In</button>
-            </form>
-        </div>
+  <div class="row">
+    <div class="col-md-6 offset-md-3 card py-3">
+      <h2 class="text-center brand-centered">Sign In</h2>
+      <p class="text-center">
+        If you have not created an account yet, then
+        <a
+          class="link"
+          href="{{ signup_url }}"
+          aria-label="Click to go to sign up page (Redirect to sign up page)"
+          >sign up</a
+        >
+        first.
+      </p>
+      <form class="login" method="POST" action="{% url 'account_login' %}">
+        {% csrf_token %}
+        <div class="mb-3">{{ form.as_p }}</div>
+        {% if redirect_field_value %}
+        <input
+          type="hidden"
+          name="{{ redirect_field_name }}"
+          value="{{ redirect_field_value }}"
+        />
+        {% endif %}
+        <button
+          class="btn btn-signup btn-lg w-40"
+          aria-label="Check to login"
+          type="submit"
+        >
+          Sign In
+        </button>
+      </form>
     </div>
+  </div>
 </div>
 {% endblock %}
