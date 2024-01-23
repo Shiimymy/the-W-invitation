@@ -1,5 +1,7 @@
 from django.urls import path
 from . import views
+from django.conf.urls import handler500
+from .views import custom_500
 
 """url paths"""
 urlpatterns = [
@@ -9,3 +11,6 @@ urlpatterns = [
     path('edit/<int:memory_id>/', views.edit_memory, name='edit'),
     path('delete/<int:memory_id>/', views.delete_memory, name='delete'),
 ]
+
+
+handler500 = 'blog.views.custom_500'

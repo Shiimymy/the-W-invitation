@@ -93,3 +93,7 @@ def delete_memory(request, memory_id):
     memory.delete()
     messages.add_message(request, messages.SUCCESS, "Memory deleted successfuly!") 
     return redirect('memories')
+
+
+def custom_500(request):
+    return render(request, '500.html', status=500)
