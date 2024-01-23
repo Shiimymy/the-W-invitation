@@ -1,3 +1,7 @@
+{% extends "base.html" %}
+
+{% block content %}
+
 <article>
     <h2>Internal Server Error
         <br>
@@ -10,3 +14,5 @@
     <a class="btn btn-custom-2 mt-1" href="{% url 'memories' %}" role="button"
         aria-label="Click to cancel action (Redirect to Memories page)">Back to Memories page</a>
 </article>
+
+{% endblock %}
