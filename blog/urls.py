@@ -1,7 +1,7 @@
 from django.urls import path
 from . import views
-from django.conf.urls import handler500
-from .views import custom_500
+from django.conf.urls import handler500, handler404
+from .views import custom_500, custom_404
 
 """url paths"""
 urlpatterns = [
@@ -14,3 +14,4 @@ urlpatterns = [
 
 
 handler500 = 'blog.views.custom_500'
+handler404 = 'blog.views.custom_404'
