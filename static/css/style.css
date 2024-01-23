@@ -308,6 +308,13 @@ input[type="file"] {
     margin-top: 0.25em;
 }
 
+
+/*--------------------------------------------  Error Pages */
+
+.error_article {
+    height: 100vh;
+}
+
 /*--------------------------------------------  Media queries */
 
 
