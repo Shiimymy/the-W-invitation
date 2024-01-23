@@ -51,7 +51,8 @@ a:hover {
 
 .main {
     position: relative;
-    background-image: url("/static/flower-frame.png");
+    background-image: url(
+        "https://res.cloudinary.com/dbuqodley/image/upload/v1700681327/static/flower-frame.097d5ed9ca10.png");
     background-size: cover;
 }
 
@@ -96,7 +97,8 @@ header {
 
 header::before {
     content: "";
-    background-image: url("/static/rings.jpg");
+    background-image: url(
+        "https://res.cloudinary.com/dbuqodley/image/upload/v1700681328/static/rings.7b141dd0c261.jpg");
     position: absolute;
     background-size: cover;
     opacity: 50%;
