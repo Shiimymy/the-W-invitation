@@ -3,6 +3,7 @@ from . import views
 from django.conf.urls import handler500, handler404
 from .views import custom_500, custom_404
 
+
 """url paths"""
 urlpatterns = [
     path('', views.index, name='home'),

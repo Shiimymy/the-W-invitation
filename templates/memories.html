@@ -16,7 +16,7 @@
     <a class="btn btn-custom" href="{% url 'memory_form' %}" role="button" aria-label="Go to the add memry page"><i class="fa-solid fa-plus"></i> Add your memory</a>
 </div>
 
-<article id="memories_list">
+<article>
 
     <!--Filter Form-->
     <form method="GET" action="{% url 'memories' %}">
@@ -41,7 +41,7 @@
     </form>
 
     <!--List of approved memories-->
-    <div id="memories_list" class="row justify-content-center">
+    <div class="row justify-content-center">
         {% for memories in memories_list %}
         <div class="card col-5 col-md-4 mt-2 p-2">
             <div class="image-container">

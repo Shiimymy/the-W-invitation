@@ -28,8 +28,8 @@ class Memorieslist(LoginRequiredMixin, generic.ListView):
 
         memories = Memories.objects.filter(approved=True).order_by("-created_on")
         selected_location = self.request.GET.get('location', '')
-        selected_inviter = self.request.GET.get('inviter', '')        
-        
+        selected_inviter = self.request.GET.get('inviter', '')
+
         if selected_location:
             memories = memories.filter(location=selected_location)
 
@@ -58,7 +58,9 @@ class MemoryPost(LoginRequiredMixin, View):
             memory.location = memory_form.cleaned_data.get('location')
             memory.inviter = memory_form.cleaned_data.get('inviter')
             memory.save()
-            messages.add_message(request, messages.SUCCESS, "Memory submited, it will show once approved by admin.")
+            messages.add_message(request,
+                                 messages.SUCCESS,
+                                 "Memory submited, it will show once approved by admin.")
             return redirect('memories')
         else:
             context = {'form': memory_form}
@@ -77,7 +79,8 @@ def edit_memory(request, memory_id):
             memory = memory_form.save(commit=False)
             memory.approved = False
             memory.save()
-            messages.add_message(request, messages.SUCCESS, "Memory updated, itwill show once approved by admin.")        
+            messages.add_message(request, messages.SUCCESS,
+                                 "Memory updated, itwill show once approved by admin.")
             return redirect('memories')
     else:
         memory_form = MemoryForm(instance=memory)
@@ -91,7 +94,8 @@ def delete_memory(request, memory_id):
     """Delete Memory if login"""
     memory = get_object_or_404(Memories, id=memory_id)
     memory.delete()
-    messages.add_message(request, messages.SUCCESS, "Memory deleted successfuly!") 
+    messages.add_message(request, messages.SUCCESS,
+                         "Memory deleted successfuly!")
     return redirect('memories')
 
 

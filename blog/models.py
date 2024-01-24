@@ -15,7 +15,7 @@ class Memories(models.Model):
         ('Venue', 'Venue'),
         ('Other', 'Other'),
     )
-    
+
     INVITER_OPTION = (
         ('Bride', 'Bride'),
         ('Groom', 'Groom'),
