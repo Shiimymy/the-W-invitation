@@ -149,7 +149,7 @@ We can see below the wireframes of the first user home page and sign in (registe
 
 ### Database Scheme
 
-[Database Diagram](static/DB_diagram.png)
+![Database Diagram](static/DB_diagram.png)
 
 The Memories represent the posts that the admin and user can view in the Memories page. It is also used for them to be able to add/edit/delete their Memories. They are auto complete fields : author, created_on and approved set to False to prevent unwanted pictures/messages.
 The image field is not required to allow users to leave only a message if they wish. However, all other fields are required from the person creating the Memory : content, location and inviter. The last two have choices/options that are directly included in the Database:  
@@ -332,18 +332,18 @@ If the user try to access a page not available on the website, this page will sh
 
 ### Programs Used
 
-[Github](https://github.com/) - Storing the code online
-[Heroku](https://www.heroku.com/home) - Used as the cloud-based platform to deploy the site.
-[Google Fonts](https://fonts.google.com/) - Import the website's fonts.
-[Animate.css](https://animate.style/) - used for the the home page header.
-[Am I Responsive](https://ui.dev/amiresponsive) - To show the website image on a range of devices.
-[Font Awesome](https://fontawesome.com/) - Used to have icons.
-[W3C Markup Validation Service](https://validator.w3.org/) - Used to validate HTML
-[CSS Validation Service](https://jigsaw.w3.org/css-validator/) - Used to validate CSS
-[Jshint](https://jshint.com/) - Used to validate JavaScript
-[Code Beautify](https://codebeautify.org/jsvalidate)
-[Pep8ci](https://pep8ci.herokuapp.com/#) - Used to validate Python
-[InVision](https://www.invisionapp.com/) - used for the wireframe
+- [Github](https://github.com/) - Storing the code online
+- [Heroku](https://www.heroku.com/home) - Used as the cloud-based platform to deploy the site.
+- [Google Fonts](https://fonts.google.com/) - Import the website's fonts.
+- [Animate.css](https://animate.style/) - used for the the home page header.
+- [Am I Responsive](https://ui.dev/amiresponsive) - To show the website image on a range of devices.
+- [Font Awesome](https://fontawesome.com/) - Used to have icons.
+- [W3C Markup Validation Service](https://validator.w3.org/) - Used to validate HTML
+- [CSS Validation Service](https://jigsaw.w3.org/css-validator/) - Used to validate CSS
+- [Jshint](https://jshint.com/) - Used to validate JavaScript
+- [Code Beautify](https://codebeautify.org/jsvalidate)
+- [Pep8ci](https://pep8ci.herokuapp.com/#) - Used to validate Python
+- [InVision](https://www.invisionapp.com/) - used for the wireframe
 
 ## Deployments
 
@@ -404,15 +404,15 @@ Please see [TESTING.md](TESTING.md) for all the detailed testing performed.
 
 ### Documentation
 
-[Stack Overflow](https://stackoverflow.com/)
-[MDN](https://developer.mozilla.org/fr/)
-[Code Institute](https://codeinstitute.net/)
-[Bootstrap v5.2](https://getbootstrap.com/docs/5.2/getting-started/introduction/)
-[Django docs](https://www.djangoproject.com/)
-[Django Allauth](https://docs.allauth.org/en/latest/)
-[Cloudinary](https://cloudinary.com/documentation)
-[Google](https://www.google.com/)
-[PyPI](https://pypi.org/)
+- [Stack Overflow](https://stackoverflow.com/)
+- [MDN](https://developer.mozilla.org/fr/)
+- [Code Institute](https://codeinstitute.net/)
+- [Bootstrap v5.2](https://getbootstrap.com/docs/5.2/getting-started/introduction/)
+- [Django docs](https://www.djangoproject.com/)
+- [Django Allauth](https://docs.allauth.org/en/latest/)
+- [Cloudinary](https://cloudinary.com/documentation)
+- [Google](https://www.google.com/)
+- [PyPI](https://pypi.org/)
 
 ### Content
 
