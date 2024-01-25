@@ -280,6 +280,11 @@ article i {
     border-color: var(--primary-color);
 }
 
+#empty {
+    height: 35vh;
+    padding: 2.5em 0;
+}
+
 /*--------------------------------------------  Form page */
 
 .form {
