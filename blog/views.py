@@ -75,7 +75,7 @@ def edit_memory(request, memory_id):
 
     if request.user != memory.author:
         raise Http404
-    
+
     else:
         if request.method == 'POST':
             memory_form = MemoryForm(request.POST, request.FILES, instance=memory)
@@ -97,10 +97,14 @@ def edit_memory(request, memory_id):
 def delete_memory(request, memory_id):
     """Delete Memory if login"""
     memory = get_object_or_404(Memories, id=memory_id)
-    memory.delete()
-    messages.add_message(request, messages.SUCCESS,
+
+    if request.user != memory.author:
+        raise Http404
+    else:
+        memory.delete()
+        messages.add_message(request, messages.SUCCESS,
                          "Memory deleted successfuly!")
-    return redirect('memories')
+        return redirect('memories')
 
 
 def custom_500(request):
