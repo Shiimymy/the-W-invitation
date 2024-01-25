@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.http import Http404
 from django.views import generic, View
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
@@ -72,9 +73,12 @@ def edit_memory(request, memory_id):
     """Edit Memory if login"""
     memory = get_object_or_404(Memories, id=memory_id)
 
-    if request.method == 'POST':
-        memory_form = MemoryForm(request.POST, request.FILES, instance=memory)
-
+    if request.user != memory.author:
+        raise Http404
+    
+    else:
+        if request.method == 'POST':
+            memory_form = MemoryForm(request.POST, request.FILES, instance=memory)
         if memory_form.is_valid():
             memory = memory_form.save(commit=False)
             memory.approved = False
@@ -82,11 +86,11 @@ def edit_memory(request, memory_id):
             messages.add_message(request, messages.SUCCESS,
                                  "Memory updated, itwill show once approved by admin.")
             return redirect('memories')
-    else:
-        memory_form = MemoryForm(instance=memory)
-
-    context = {'form': memory_form}
-    return render(request, 'edit.html', context)
+        else:
+            memory_form = MemoryForm(instance=memory)
+        context = {'form': memory_form}
+        return render(request, 'edit.html', context)
+    
 
 
 @login_required
