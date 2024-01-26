@@ -8,9 +8,19 @@ The goal is to replace paper wedding invitation and share event's memories with 
 
 Project url :[The W Invitation](https://the-w-invitation-104939a4f065.herokuapp.com/)
 
-## Table of Contents
+## Table of Content
 
-## User Experience (UX)
+* [User Experience](#user-experience)
+* [Design](#design)
+* [Security Features](#security-features)
+* [Features](#features)
+* [Technologies Used](#technologies-used)
+* [Deployments](#deployments)
+* [Testing](#testing)
+* [References](#references)
+
+
+## User Experience
 
 The website has been design for a seamless, smooth and cute design to respect it's goal. It is intuitive and invite the user to participate fully at the wedding. The website is responsive so the user is be able to easily access on any device without forgetting accessibility for special users.
 
@@ -208,23 +218,33 @@ The footer has different elements such as
 
 ### Authentication pages
 
-1. **Register page**
+1. **Login page**
+
+Django sign in page was used to create this page and then customized with CSS.
+
+![Login page](/static/sign_in.png)
+
+A message will confirm the action once the button sign in clicked :
+
+![Message sign up](/static/message_signin.png)
+
+2. **Register page**
 
 Django register page was used to create this page and then customized with CSS.
 
 ![Register Page](/static/sign_up.png)
 
-2. **Login page**
-
-Django sign in page was used to create this page and then customized with CSS.
-
-![Login page](/static/sign_in.png)
+The same message as sign in will confirm the action once the button sign up clicked.
 
 3. **Logout page**
 
 Django logout page was used to create this page and then customized with CSS.
 
 ![Logout page](/static/signout.png)
+
+A message will confirm the action once the button sign out clicked :
+
+![Message sign up](/static/message_signout.png)
 
 ### Home page
 
@@ -276,6 +296,10 @@ However, if the user is the author, he will access to two different buttons whic
 
 ![User is the author of the memory](/static/edit_delete_memory.png)
 
+A message will confirm the delete action once the button delete clicked :
+
+![Message add](/static/message_delete.png)
+
 ### Add Memory page
 
 This page is the page where an user land after clicking the Add Memory button in the Memories Page. It is a form in which all fiedls are required to add a Memory expect the image field. This field will have a placeholder image if the user doesn't want to share a picture.
@@ -283,12 +307,20 @@ If the user change his mind, a cancel button is available for a smooth experienc
 
 ![Add Memory Page](/static/add_form.png)
 
+A message will confirm the action once the button add clicked : 
+
+![Message add](/static/message_add.png)
+
 ### Edit Memory page
 
 This page is the page where an user land after clicking an Edit button in the Memories Page. It has the same requirements as the Add Memory page.
 If the user change his mind, a cancel button is also available for a smooth experience.
 
 ![Edit Memory Page](/static/edit_memory.png)
+
+A message will confirm the action once the button edit clicked :
+
+![Message add](/static/message_edit.png)
 
 ### Error pages
 
@@ -309,6 +341,7 @@ If the user try to access a page not available on the website, this page will sh
 - Likes: Like will be implement to increase the participation of all users.
 - Contact Page: A contact page will be created for the user to send messages to the admin if they ahve any requests.
 - Home page management: the admin will be able to edit information on the home page in case there is any update.
+- Adding the Social links in the footer to the logos once the pages will be created.
 
 ## Technologies Used
 
@@ -328,7 +361,7 @@ If the user try to access a page not available on the website, this page will sh
 
 - [Django](https://docs.djangoproject.com/en/5.0/) - Python framework
 - [Bootstrap v5](https://getbootstrap.com/docs/5.2/getting-started/introduction/) - CSS framework
-- [Djanfo crispy Form App](https://django-crispy-forms.readthedocs.io/en/latest/install.html) ????????????????????????????????
+- [Djanfo crispy Form App](https://django-crispy-forms.readthedocs.io/en/latest/install.html) - Django app
 
 ### Programs Used
 
@@ -341,7 +374,6 @@ If the user try to access a page not available on the website, this page will sh
 - [W3C Markup Validation Service](https://validator.w3.org/) - Used to validate HTML
 - [CSS Validation Service](https://jigsaw.w3.org/css-validator/) - Used to validate CSS
 - [Jshint](https://jshint.com/) - Used to validate JavaScript
-- [Code Beautify](https://codebeautify.org/jsvalidate)
 - [Pep8ci](https://pep8ci.herokuapp.com/#) - Used to validate Python
 - [InVision](https://www.invisionapp.com/) - used for the wireframe
 
