@@ -10,4 +10,4 @@ class MemoryForm(forms.ModelForm):
     class Meta:
         model = Memories
         fields = ('image', 'location', 'inviter', 'content',)
-        widgets = { 'content' : forms.Textarea(attrs={'maxlength': '200',}) }
+        widgets = {'content': forms.Textarea(attrs={'maxlength': '200', })}

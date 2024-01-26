@@ -78,19 +78,19 @@ def edit_memory(request, memory_id):
 
     else:
         if request.method == 'POST':
-            memory_form = MemoryForm(request.POST, request.FILES, instance=memory)
+            memory_form = MemoryForm(request.POST, request.FILES,
+                                     instance=memory)
             if memory_form.is_valid():
                 memory = memory_form.save(commit=False)
                 memory.approved = False
                 memory.save()
                 messages.add_message(request, messages.SUCCESS,
-                                 "Memory updated, itwill show once approved by admin.")
+                                     "Memory updated, itwill show once approved by admin.")
                 return redirect('memories')
         else:
             memory_form = MemoryForm(instance=memory)
         context = {'form': memory_form}
         return render(request, 'edit.html', context)
-    
 
 
 @login_required
@@ -103,7 +103,7 @@ def delete_memory(request, memory_id):
     else:
         memory.delete()
         messages.add_message(request, messages.SUCCESS,
-                         "Memory deleted successfuly!")
+                             "Memory deleted successfuly!")
         return redirect('memories')
 
 
