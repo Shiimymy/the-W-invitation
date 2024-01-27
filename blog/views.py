@@ -101,10 +101,14 @@ def delete_memory(request, memory_id):
     if request.user != memory.author:
         raise Http404
     else:
-        memory.delete()
-        messages.add_message(request, messages.SUCCESS,
-                             "Memory deleted successfuly!")
-        return redirect('memories')
+        if request.method == 'POST':
+            memory_form = MemoryForm(request.POST, request.FILES,
+                                     instance=memory)
+            memory.delete()
+            messages.add_message(request, messages.SUCCESS,
+                                 "Memory deleted successfuly!")
+            return redirect('memories')
+        return render(request, 'delete.html')    
 
 
 def custom_500(request):

@@ -67,7 +67,7 @@
                 {% if memories.author == user %}
                 <!--Visible buttons for user to handle its memories-->
                 <a class="btn btn-custom mt-1" href="{% url 'edit' memories.id %}" role="button" aria-label="Go to the page to edit your memory">Edit</a>
-                <a class="btn btn-custom-2 mt-1" href="/delete/{{ memories.id }}" role="button" aria-label="Click to delete your memory" title="This action will delete you memory permanently">Delete</a>
+                <a class="btn btn-custom-2 mt-1" href="{% url 'delete' memories.id %}" role="button" aria-label="Click to delete your memory" title="This action will delete you memory permanently">Delete</a>
                 {% else %}
                 <i class="fa-brands fa-pagelines"></i>
                 {% endif %}

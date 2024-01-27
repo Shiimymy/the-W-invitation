@@ -1,0 +1,21 @@
+{% extends "base.html" %} {% block content %} {% load crispy_forms_tags %}
+
+<article class="form" id="delete-form">
+    <h2>
+        Are you sure you want to delete this memory?
+    </h2>
+
+    <!--Delete form-->
+    <div class="form-box">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <button class="btn btn-custom mt-1" type="submit" aria-label="Click to delete your memory (Redirect to Memories page)">
+                Delete
+            </button>
+            <a class="btn btn-custom-2 mt-1" href="{% url 'memories' %}" role="button"
+                aria-label="Click to cancel action (Redirect to Memories page)">Cancel</a>        
+        </form>
+    </div>
+</article>
+
+{% endblock %}
