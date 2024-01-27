@@ -1,8 +1,8 @@
 # THE W INVITATION
 
 The W Invitation is a wedding website. The website is for a Groom and a Bride to share with the guests of the event.
-This way, all register user will be able to get more information about the wedding on the home page to be able to participate but also share memories on another page.
-The goal is to replace paper wedding invitation and share event's memories with the couple and other guests on the same media.
+This way, all register users will be able to get more information about the wedding on the home page so they can  participate but also share teir memories on a specific page.
+The goal is to replace paper wedding invitation and share event's memories with the couple and other guests on the same media. This is similar to a guestbook but online.
 
 ![Website on Responsive Screens](/static/Am_I_Responsive.png)
 
@@ -22,12 +22,12 @@ Project url :[The W Invitation](https://the-w-invitation-104939a4f065.herokuapp.
 
 ## User Experience
 
-The website has been design for a seamless, smooth and cute design to respect it's goal. It is intuitive and invite the user to participate fully at the wedding. The website is responsive so the user is be able to easily access on any device without forgetting accessibility for special users.
+The website has been design for a seamless, smooth and cute design to respect its goal. It is intuitive and invite the user to participate fully at the wedding. The website is responsive so the user is able to easily access on any device plus it is accessible for blind users.
 
 ### Project Goals
 
 The goal of [The W Invitation](https://the-w-invitation-104939a4f065.herokuapp.com/) is to replace paper invitation and for guests to share their event's memories with the bride, the groom and all participants.
-This invites all participants to come to the event and take pictures from their view, share stories or congratulation messages. As a wedding can get busy, it can be interesting to share those memories with people who might have missed the moment. This would be like a guest's book.
+It invites all participants to come to the event and take pictures from their view, share stories and congratulation messages. As a wedding event can get busy, it can be interesting to share those memories with people who might have missed the moment.
 
 ### Agile MethodologyProject Board
 
@@ -104,7 +104,7 @@ A **template** was created to help write User Stories and define Epics.
 
 - Access to an admin dashboard for managing memories posts and guest(users).
 - Ability to add, edit, or delete guest.
-- Ability to add, edit, or delete memories posts.
+- Ability to add, edit, or delete memory posts.
 - Ability to approve a post which has been add or edit via the Memories page.
 
 ## Design
@@ -153,8 +153,8 @@ We can see below the wireframes of the first user home page and sign in (registe
 - Model created for admin and logged in users (guests) for them to be able to add a new memory on the Memories page.
 - An user can have multiples memories but would be deleted if the admin decides to delete the user.
 - Admin can add/edit/delete memories through djangos admin panel.
-- Users are able to add and edit memories via a form. Adding a picture (CloudinaryField) is not a requirement in the form if user wants only to leave a message but have to complete the other fields : location (CharField), inviter and content (TextField). The two first have predefined selectable information. Only one location can be selected but 2 inviters can be selected as a **MultiSelectField** was used.
-- The users can't add/edit the following information : author (ForeignKey linked to AllAuth User Model) and post creating date (DateTimeField).
+* Users are able to add and edit memories via a form. Adding a picture (CloudinaryField) is not a requirement in the form if user wants only to leave a message but have to complete the other fields : location (CharField), inviter and content (TextField). The two first have predefined selectable information. Only one location can be selected but 2 inviters can be selected as a [MultiSelectField](https://pypi.org/project/django-multiselectfield/) was used.
+- The users **can't** add/edit the following information : author (ForeignKey linked to AllAuth User Model) and post creating date (DateTimeField).
 - Full CRUD functionality is available for the users but each memory have to be **approuved** via the admin page to avoid messages or pictures the bridals wouldn't like to see on their website.
 
 ### Database Scheme
@@ -183,7 +183,10 @@ The image field is not required to allow users to leave only a message if they w
    A [CSRF token](https://docs.djangoproject.com/en/5.0/ref/csrf/) is a secure random token (e.g., synchronizer token or challenge token) that is used to prevent CSRF (Cross-Site Request Forgery) attacks. It is used in Django as a feature to get away from attacks. When the session of the user starts on a website, a token is generated which is then cross-verified with the token present with the request whenever a request is being processed.
 
 5. Form Validation
-   The forms to add or edit memories used built in "required" feature from Django forms. The only field that has been customized in the image field as users don't have to select an image to create a memory. This was done using blank=True in the Memories models.
+   The forms to add or edit memories use built in "required" feature from Django forms. The only field that is not required is the image field as users don't have to select an image to create a memory. This was done using blank=True in the Memories models.
+
+6. Edit/Delete protection
+   A security in the backend has been place to allow only the author of a specific memory to access the edit and delete functionality and will throw a 404 if someone else try to access it.
 
 ## Features
 
@@ -272,7 +275,7 @@ Then the next section content is replaced with detailed information about a lunc
 
 ### Memories Page
 
-The Memories page is where the user is be able to view Memories posts and participate fully to the website by adding and editing his memories. It is similar to guest book but user can add as much memories as thay want and add pictures.
+The Memories page is where the user is able to view Memories posts and participate fully to the website by adding and editing his memories. It is similar to guestbook but user can add as much memories as thay want and add pictures.
 
 1. **Add memory button**
 
@@ -292,17 +295,13 @@ The location filter can have only one option selected at the same time whereas t
 A post has different features depending if the authenticated user is the author of a post or not.
 If the user is not the author of a post, not functionality will be available for him.
 
-However, if the user is the author, he will access to two different buttons which will allow him to Edit or Delete his memory. The Edit button redirect to another page.
+However, if the user is the author, he will access to two different buttons which will allow him to Edit or Delete his memory. They both redirect to their own page.
 
 ![User is the author of the memory](/static/edit_delete_memory.png)
 
-A message will confirm the delete action once the button delete clicked :
-
-![Message add](/static/message_delete.png)
-
 ### Add Memory page
 
-This page is the page where an user land after clicking the Add Memory button in the Memories Page. It is a form in which all fiedls are required to add a Memory expect the image field. This field will have a placeholder image if the user doesn't want to share a picture.
+This page is the page where an user land after clicking the "Add Memory" button in the Memories Page. It is a form in which all fiedls are required to add a Memory expect the image field. This field will have a placeholder image if the user doesn't want to share a picture.
 If the user change his mind, a cancel button is available for a smooth experience.
 
 ![Add Memory Page](/static/add_form.png)
@@ -321,6 +320,16 @@ If the user change his mind, a cancel button is also available for a smooth expe
 A message will confirm the action once the button edit clicked :
 
 ![Message add](/static/message_edit.png)
+
+### Delete Memory page
+
+This page is the page where an user land after clicking the "Delete" button in the Memories Page. It has been created to safely confirm the deletion as per safe programming principle.
+
+![Delete page](/static/delete_page.png)
+
+A message will confirm the delete action once the button delete clicked :
+
+![Message add](/static/message_delete.png)
 
 ### Error pages
 
